@@ -10,32 +10,32 @@ export const diagnoses: Diagnosis[] = [
         id: 'q1',
         text: '一人で黙々とやるのが得意？',
         options: [
-          { id: 'a', text: 'はい', value: 'introvert' },
-          { id: 'b', text: 'いいえ', value: 'extrovert' }
+          { id: 'a', text: 'そう！💫', value: 'introvert' },
+          { id: 'b', text: 'ちがうよ〜🌸', value: 'extrovert' }
         ]
       },
       {
         id: 'q2',
         text: '音楽を聞きながらの勉強は集中できる？',
         options: [
-          { id: 'a', text: 'はい', value: 'multitask' },
-          { id: 'b', text: 'いいえ', value: 'focused' }
+          { id: 'a', text: 'できる！🎵', value: 'multitask' },
+          { id: 'b', text: 'むり〜😅', value: 'focused' }
         ]
       },
       {
         id: 'q3',
         text: 'わからないところはすぐに人に聞く？',
         options: [
-          { id: 'a', text: 'はい', value: 'collaborative' },
-          { id: 'b', text: 'いいえ', value: 'independent' }
+          { id: 'a', text: 'すぐ聞く！💬', value: 'collaborative' },
+          { id: 'b', text: 'まず自分で🤔', value: 'independent' }
         ]
       },
       {
         id: 'q4',
         text: '夜型？朝型？',
         options: [
-          { id: 'a', text: '朝型', value: 'morning' },
-          { id: 'b', text: '夜型', value: 'night' }
+          { id: 'a', text: '朝派！☀️', value: 'morning' },
+          { id: 'b', text: '夜派！🌙', value: 'night' }
         ]
       }
     ],
@@ -84,32 +84,32 @@ export const diagnoses: Diagnosis[] = [
         id: 'q1',
         text: '勉強中に静かすぎると逆に集中できない？',
         options: [
-          { id: 'a', text: 'はい', value: 'ambient' },
-          { id: 'b', text: 'いいえ', value: 'silent' }
+          { id: 'a', text: 'そうかも🎶', value: 'ambient' },
+          { id: 'b', text: '静かがいい🤫', value: 'silent' }
         ]
       },
       {
         id: 'q2',
         text: '朝と夜どちらが調子いい？',
         options: [
-          { id: 'a', text: '朝', value: 'morning' },
-          { id: 'b', text: '夜', value: 'night' }
+          { id: 'a', text: 'おはよ〜🌅', value: 'morning' },
+          { id: 'b', text: 'よる〜🌃', value: 'night' }
         ]
       },
       {
         id: 'q3',
         text: '勉強のおともにおやつが必要？',
         options: [
-          { id: 'a', text: 'はい', value: 'reward' },
-          { id: 'b', text: 'いいえ', value: 'focus' }
+          { id: 'a', text: '必須！🍪', value: 'reward' },
+          { id: 'b', text: 'いらないかな💪', value: 'focus' }
         ]
       },
       {
         id: 'q4',
         text: '勉強机は整理されてる方がいい？',
         options: [
-          { id: 'a', text: 'はい', value: 'organized' },
-          { id: 'b', text: 'いいえ', value: 'flexible' }
+          { id: 'a', text: 'きっちり派✨', value: 'organized' },
+          { id: 'b', text: 'ゆるふわ派🌼', value: 'flexible' }
         ]
       }
     ],
@@ -158,32 +158,32 @@ export const diagnoses: Diagnosis[] = [
         id: 'q1',
         text: 'わからないことはとことん調べる？',
         options: [
-          { id: 'a', text: 'はい', value: 'research' },
-          { id: 'b', text: 'いいえ', value: 'practical' }
+          { id: 'a', text: 'とことん！🔍', value: 'research' },
+          { id: 'b', text: 'ほどほどに😌', value: 'practical' }
         ]
       },
       {
         id: 'q2',
         text: 'テスト前に一夜漬けしたことがある？',
         options: [
-          { id: 'a', text: 'はい', value: 'cramming' },
-          { id: 'b', text: 'いいえ', value: 'steady' }
+          { id: 'a', text: 'あるある😅', value: 'cramming' },
+          { id: 'b', text: 'ないよ〜😇', value: 'steady' }
         ]
       },
       {
         id: 'q3',
         text: '好きな教科はとことん追求したい？',
         options: [
-          { id: 'a', text: 'はい', value: 'deep' },
-          { id: 'b', text: 'いいえ', value: 'balanced' }
+          { id: 'a', text: 'もちろん！🤩', value: 'deep' },
+          { id: 'b', text: 'そうでもない😊', value: 'balanced' }
         ]
       },
       {
         id: 'q4',
         text: '人に教えると覚えやすい？',
         options: [
-          { id: 'a', text: 'はい', value: 'teaching' },
-          { id: 'b', text: 'いいえ', value: 'absorbing' }
+          { id: 'a', text: 'それそれ！👩‍🏫', value: 'teaching' },
+          { id: 'b', text: 'ちがうかな🤷', value: 'absorbing' }
         ]
       }
     ],

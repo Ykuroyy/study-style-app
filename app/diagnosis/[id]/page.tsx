@@ -45,6 +45,9 @@ export default function DiagnosisPage() {
   }
 
   const calculateResult = (allAnswers: string[]) => {
+    console.log('診断ID:', diagnosis.id)
+    console.log('回答:', allAnswers)
+    
     let resultIndex = 0
     
     if (diagnosis.id === 'study-method') {
@@ -55,24 +58,27 @@ export default function DiagnosisPage() {
       
       allAnswers.forEach((answer, index) => {
         if (index === 0) { // Q1: 一人で黙々
-          if (answer === 'introvert') planningScore += 2
-          else communicationScore += 2
+          if (answer === 'introvert') planningScore += 3
+          else communicationScore += 3
         } else if (index === 1) { // Q2: 音楽聞きながら
-          if (answer === 'multitask') intuitiveScore += 2
-          else planningScore += 1
+          if (answer === 'multitask') intuitiveScore += 3
+          else planningScore += 2
         } else if (index === 2) { // Q3: すぐ人に聞く
-          if (answer === 'collaborative') communicationScore += 3
-          else planningScore += 1
+          if (answer === 'collaborative') communicationScore += 4
+          else planningScore += 2
         } else if (index === 3) { // Q4: 朝型夜型
-          if (answer === 'morning') planningScore += 1
-          else intuitiveScore += 1
+          if (answer === 'morning') planningScore += 2
+          else intuitiveScore += 2
         }
       })
       
+      console.log('スコア - 計画:', planningScore, '直感:', intuitiveScore, 'コミュ:', communicationScore)
+      
       // 最も高いスコアの結果を選択
-      if (communicationScore >= Math.max(planningScore, intuitiveScore)) {
+      const maxScore = Math.max(planningScore, intuitiveScore, communicationScore)
+      if (communicationScore === maxScore) {
         resultIndex = 2 // コミュニケーション型
-      } else if (intuitiveScore > planningScore) {
+      } else if (intuitiveScore === maxScore) {
         resultIndex = 1 // 直感ひらめき型
       } else {
         resultIndex = 0 // コツコツ計画型
@@ -84,23 +90,26 @@ export default function DiagnosisPage() {
       
       allAnswers.forEach((answer, index) => {
         if (index === 0) { // Q1: 静かすぎると集中できない
-          if (answer === 'ambient') cafeScore += 3
-          else focusedScore += 2
+          if (answer === 'ambient') cafeScore += 4
+          else focusedScore += 3
         } else if (index === 1) { // Q2: 朝夜
-          if (answer === 'morning') focusedScore += 1
-          else cafeScore += 1
+          if (answer === 'morning') focusedScore += 2
+          else cafeScore += 2
         } else if (index === 2) { // Q3: おやつ必要
-          if (answer === 'reward') rewardScore += 3
-          else focusedScore += 1
+          if (answer === 'reward') rewardScore += 4
+          else focusedScore += 2
         } else if (index === 3) { // Q4: 整理整頓
-          if (answer === 'organized') focusedScore += 2
-          else rewardScore += 2
+          if (answer === 'organized') focusedScore += 3
+          else rewardScore += 3
         }
       })
       
-      if (cafeScore >= Math.max(focusedScore, rewardScore)) {
+      console.log('スコア - カフェ:', cafeScore, '集中:', focusedScore, 'ご褒美:', rewardScore)
+      
+      const maxScore = Math.max(cafeScore, focusedScore, rewardScore)
+      if (cafeScore === maxScore) {
         resultIndex = 0 // カフェ気分タイプ
-      } else if (rewardScore > focusedScore) {
+      } else if (rewardScore === maxScore) {
         resultIndex = 2 // ごほうび大事タイプ
       } else {
         resultIndex = 1 // 集中モードONタイプ
@@ -113,19 +122,21 @@ export default function DiagnosisPage() {
       
       allAnswers.forEach((answer, index) => {
         if (index === 0) { // Q1: とことん調べる
-          if (answer === 'research') analyticalScore += 3
-          else sensoryScore += 1
+          if (answer === 'research') analyticalScore += 4
+          else sensoryScore += 2
         } else if (index === 1) { // Q2: 一夜漬け
-          if (answer === 'cramming') flashScore += 3
-          else steadyScore += 2
+          if (answer === 'cramming') flashScore += 4
+          else steadyScore += 3
         } else if (index === 2) { // Q3: 好きな教科追求
-          if (answer === 'deep') analyticalScore += 2
-          else steadyScore += 1
+          if (answer === 'deep') analyticalScore += 3
+          else steadyScore += 2
         } else if (index === 3) { // Q4: 人に教える
-          if (answer === 'teaching') sensoryScore += 3
-          else flashScore += 1
+          if (answer === 'teaching') sensoryScore += 4
+          else flashScore += 2
         }
       })
+      
+      console.log('スコア - 継続:', steadyScore, 'ひらめき:', flashScore, '分析:', analyticalScore, '感覚:', sensoryScore)
       
       const maxScore = Math.max(steadyScore, flashScore, analyticalScore, sensoryScore)
       if (sensoryScore === maxScore) {
@@ -139,6 +150,9 @@ export default function DiagnosisPage() {
       }
     }
 
+    console.log('選択された結果インデックス:', resultIndex)
+    console.log('結果:', diagnosis.results[resultIndex])
+    
     setResult(diagnosis.results[resultIndex])
   }
 

@@ -47,16 +47,21 @@ export default function QuestionCard({
       </div>
       
       <div className="space-y-3 sm:space-y-4">
-        {question.options.map((option) => (
+        {question.options.map((option, index) => (
           <button
             key={option.id}
             onClick={() => onAnswer(option.value)}
-            className="w-full text-center py-5 sm:py-4 px-6 sm:px-4 rounded-2xl sm:rounded-xl bg-gradient-to-r from-pink-100 to-purple-100
-                     hover:from-pink-200 hover:to-purple-200 transition-all duration-300
+            className={`w-full text-center py-5 sm:py-4 px-6 sm:px-4 rounded-2xl sm:rounded-xl
+                     ${index === 0 
+                       ? 'bg-gradient-to-r from-pink-100 to-rose-100 hover:from-pink-200 hover:to-rose-200' 
+                       : 'bg-gradient-to-r from-purple-100 to-blue-100 hover:from-purple-200 hover:to-blue-200'}
+                     transition-all duration-300
                      border-2 border-transparent hover:border-cute-primary transform hover:scale-[1.02] active:scale-[0.98]
-                     shadow-sm hover:shadow-md min-h-[60px] sm:min-h-[50px]"
+                     shadow-sm hover:shadow-md min-h-[60px] sm:min-h-[50px]`}
           >
-            <span className="text-gray-700 font-bold text-lg sm:text-base">{option.text}</span>
+            <span className="text-gray-700 font-bold text-lg sm:text-base flex items-center justify-center gap-2">
+              {option.text}
+            </span>
           </button>
         ))}
       </div>
