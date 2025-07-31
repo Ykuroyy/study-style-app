@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+body {
+  background: linear-gradient(135deg, #F8BBD9 0%, #E6E6FA 50%, #FFB6C1 100%);
+  background-attachment: fixed;
+  font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+  min-height: 100vh;
+}
+
+.cute-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 182, 193, 0.3);
+}
+
+.cute-button {
+  background: linear-gradient(135deg, #FF69B4, #FFB6C1);
+  transition: all 0.3s ease;
+}
+
+.cute-button:hover {
+  background: linear-gradient(135deg, #FF1493, #FF69B4);
+  transform: translateY(-2px);
+}
+
+.kawaii-emoji {
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}

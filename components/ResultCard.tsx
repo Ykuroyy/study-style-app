@@ -13,30 +13,31 @@ export default function ResultCard({ result, onRestart }: ResultCardProps) {
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full mx-auto"
+      className="cute-card rounded-2xl shadow-cute p-6 sm:p-8 max-w-lg w-full mx-auto"
     >
-      <div className={`${result.color} rounded-2xl p-6 mb-6`}>
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">
+      <div className={`${result.color} rounded-2xl p-6 mb-6 text-center`}>
+        <div className="text-4xl mb-3">🎉</div>
+        <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
           あなたのタイプは...
         </h2>
-        <h1 className="text-3xl font-extrabold text-gray-900">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
           {result.title}
         </h1>
       </div>
       
       <div className="mb-6">
-        <p className="text-gray-700 leading-relaxed">{result.description}</p>
+        <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{result.description}</p>
       </div>
       
       <div className="mb-8">
-        <h3 className="text-lg font-bold text-gray-800 mb-3">
+        <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-3">
           💡 アドバイス
         </h3>
         <ul className="space-y-2">
           {result.advice.map((advice, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-purple-500 mr-2">•</span>
-              <span className="text-gray-700">{advice}</span>
+              <span className="text-cute-primary mr-2">•</span>
+              <span className="text-gray-700 text-sm sm:text-base">{advice}</span>
             </li>
           ))}
         </ul>
@@ -44,9 +45,9 @@ export default function ResultCard({ result, onRestart }: ResultCardProps) {
       
       <button
         onClick={onRestart}
-        className="w-full py-3 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500
-                 text-white font-bold hover:from-purple-600 hover:to-pink-600
-                 transition-all duration-300 transform hover:scale-105"
+        className="w-full py-3 sm:py-4 rounded-2xl cute-button
+                 text-white font-bold text-sm sm:text-base
+                 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
       >
         もう一度診断する
       </button>

@@ -13,17 +13,21 @@ export default function Home() {
 
   return (
     <div className="min-h-screen p-4">
-      <div className="max-w-4xl mx-auto py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
+      <div className="max-w-lg mx-auto py-8">
+        <div className="text-center mb-10">
+          <div className="mb-6">
+            <span className="text-6xl kawaii-emoji">💖</span>
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4 drop-shadow-lg">
             勉強スタイル診断
           </h1>
-          <p className="text-gray-600">
+          <p className="text-white/90 text-lg font-medium drop-shadow-md">
             心理テストであなたにぴったりの勉強法を見つけよう！
+            <span className="kawaii-emoji ml-2">✨</span>
           </p>
         </div>
         
-        <div className="grid md:grid-cols-1 gap-6 max-w-md mx-auto">
+        <div className="space-y-4">
           {diagnoses.map((diagnosis, index) => (
             <DiagnosisCard
               key={diagnosis.id}

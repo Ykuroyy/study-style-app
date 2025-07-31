@@ -17,7 +17,20 @@ export default function DiagnosisPage() {
   const [result, setResult] = useState<DiagnosisResult | null>(null)
 
   if (!diagnosis) {
-    return <div>診断が見つかりません</div>
+    return (
+      <div className="min-h-screen flex items-center justify-center p-4">
+        <div className="cute-card rounded-2xl shadow-cute p-8 text-center">
+          <div className="text-4xl mb-4">😅</div>
+          <p className="text-gray-700 font-medium">診断が見つかりません</p>
+          <button 
+            onClick={() => router.push('/')}
+            className="mt-4 px-6 py-2 cute-button text-white rounded-full text-sm font-medium"
+          >
+            ホームに戻る
+          </button>
+        </div>
+      </div>
+    )
   }
 
   const handleAnswer = (value: string) => {

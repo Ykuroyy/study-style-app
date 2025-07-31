@@ -21,29 +21,29 @@ export default function QuestionCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
-      className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full mx-auto"
+      className="cute-card rounded-2xl shadow-cute p-6 sm:p-8 max-w-lg w-full mx-auto"
     >
       <div className="mb-6">
         <div className="flex justify-between items-center mb-4">
-          <span className="text-sm text-gray-500">
-            質問 {currentIndex + 1} / {totalQuestions}
+          <span className="text-sm text-cute-primary font-medium">
+            質問 {currentIndex + 1} / {totalQuestions} 💕
           </span>
           <div className="flex space-x-1">
             {Array.from({ length: totalQuestions }).map((_, i) => (
               <div
                 key={i}
-                className={`h-2 w-8 rounded-full transition-colors ${
+                className={`h-2 w-6 sm:w-8 rounded-full transition-colors ${
                   i < currentIndex
-                    ? 'bg-purple-400'
+                    ? 'bg-cute-primary'
                     : i === currentIndex
-                    ? 'bg-purple-600'
+                    ? 'bg-cute-secondary'
                     : 'bg-gray-200'
                 }`}
               />
             ))}
           </div>
         </div>
-        <h2 className="text-xl font-bold text-gray-800">{question.text}</h2>
+        <h2 className="text-lg sm:text-xl font-bold text-gray-800 leading-tight">{question.text}</h2>
       </div>
       
       <div className="space-y-3">
@@ -51,11 +51,12 @@ export default function QuestionCard({
           <button
             key={option.id}
             onClick={() => onAnswer(option.value)}
-            className="w-full text-left p-4 rounded-2xl bg-gradient-to-r from-pastel-pink to-pastel-purple
-                     hover:from-purple-200 hover:to-pink-200 transition-all duration-300
-                     border-2 border-transparent hover:border-purple-300 transform hover:scale-105"
+            className="w-full text-left p-4 rounded-xl bg-gradient-to-r from-pink-100 to-purple-100
+                     hover:from-pink-200 hover:to-purple-200 transition-all duration-300
+                     border-2 border-transparent hover:border-cute-primary transform hover:scale-[1.02]
+                     shadow-sm hover:shadow-md"
           >
-            <span className="text-gray-700 font-medium">{option.text}</span>
+            <span className="text-gray-700 font-medium text-sm sm:text-base">{option.text}</span>
           </button>
         ))}
       </div>
