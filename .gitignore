@@ -31,9 +31,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
-
-# study-style-app specific
-/study-style-app/node_modules
-/study-style-app/.next
-/study-style-app/out
-/study-style-app/build
