@@ -51,15 +51,15 @@ export default function QuestionCard({
           <button
             key={option.id}
             onClick={() => onAnswer(option.value)}
-            className={`w-full text-center py-8 sm:py-6 px-8 sm:px-6 rounded-3xl sm:rounded-2xl
+            className={`w-full text-center py-10 sm:py-8 px-10 sm:px-8 rounded-3xl sm:rounded-2xl
                      ${index === 0 
                        ? 'bg-gradient-to-r from-pink-100 to-rose-100 hover:from-pink-200 hover:to-rose-200' 
                        : 'bg-gradient-to-r from-purple-100 to-blue-100 hover:from-purple-200 hover:to-blue-200'}
                      transition-all duration-300
-                     border-3 border-transparent hover:border-cute-primary transform hover:scale-[1.02] active:scale-[0.98]
-                     shadow-md hover:shadow-xl min-h-[100px] sm:min-h-[80px]`}
+                     border-4 border-transparent hover:border-cute-primary transform hover:scale-[1.02] active:scale-[0.98]
+                     shadow-lg hover:shadow-2xl min-h-[120px] sm:min-h-[100px]`}
           >
-            <span className="text-gray-700 font-extrabold text-3xl sm:text-2xl flex items-center justify-center gap-2">
+            <span className="text-gray-700 font-black text-4xl sm:text-3xl flex items-center justify-center gap-2 tracking-wider">
               {option.text}
             </span>
           </button>

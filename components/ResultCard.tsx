@@ -45,12 +45,12 @@ export default function ResultCard({ result, onRestart }: ResultCardProps) {
       
       <button
         onClick={onRestart}
-        className="w-full py-8 sm:py-6 rounded-3xl sm:rounded-2xl cute-button
-                 text-white font-extrabold text-2xl sm:text-xl
+        className="w-full py-10 sm:py-8 rounded-3xl sm:rounded-2xl cute-button
+                 text-white font-black text-3xl sm:text-2xl
                  transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]
-                 shadow-xl hover:shadow-2xl min-h-[90px] sm:min-h-[70px]
+                 shadow-2xl hover:shadow-3xl min-h-[110px] sm:min-h-[90px]
                  bg-gradient-to-r from-pink-400 to-purple-400 hover:from-pink-500 hover:to-purple-500
-                 border-4 border-pink-300 border-opacity-50"
+                 border-4 border-pink-300 border-opacity-50 tracking-wider"
       >
         もういっかい診断したい！🎀
       </button>
