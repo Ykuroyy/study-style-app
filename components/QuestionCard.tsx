@@ -46,17 +46,17 @@ export default function QuestionCard({
         <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800 leading-tight">{question.text}</h2>
       </div>
       
-      <div className="space-y-2 sm:space-y-3">
+      <div className="space-y-3 sm:space-y-4">
         {question.options.map((option) => (
           <button
             key={option.id}
             onClick={() => onAnswer(option.value)}
-            className="w-full text-left p-3 sm:p-4 rounded-lg sm:rounded-xl bg-gradient-to-r from-pink-100 to-purple-100
+            className="w-full text-center py-5 sm:py-4 px-6 sm:px-4 rounded-2xl sm:rounded-xl bg-gradient-to-r from-pink-100 to-purple-100
                      hover:from-pink-200 hover:to-purple-200 transition-all duration-300
-                     border-2 border-transparent hover:border-cute-primary transform hover:scale-[1.02]
-                     shadow-sm hover:shadow-md"
+                     border-2 border-transparent hover:border-cute-primary transform hover:scale-[1.02] active:scale-[0.98]
+                     shadow-sm hover:shadow-md min-h-[60px] sm:min-h-[50px]"
           >
-            <span className="text-gray-700 font-medium text-sm sm:text-base">{option.text}</span>
+            <span className="text-gray-700 font-bold text-lg sm:text-base">{option.text}</span>
           </button>
         ))}
       </div>
