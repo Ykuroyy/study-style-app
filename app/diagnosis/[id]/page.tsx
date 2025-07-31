@@ -51,6 +51,9 @@ export default function DiagnosisPage() {
       answerCounts[answer] = (answerCounts[answer] || 0) + 1
     })
 
+    const sortedAnswers = Object.entries(answerCounts).sort((a, b) => b[1] - a[1])
+    const dominantAnswer = sortedAnswers[0]?.[0]
+
     let resultIndex = 0
     if (diagnosis.id === 'study-method') {
       if (answerCounts['collaborative'] >= 2 || answerCounts['extrovert'] >= 2) {
@@ -63,10 +66,10 @@ export default function DiagnosisPage() {
     } else if (diagnosis.id === 'environment') {
       if (answerCounts['reward'] >= 2 || answerCounts['flexible'] >= 2) {
         resultIndex = 2
-      } else if (answerCounts['ambient'] >= 2) {
-        resultIndex = 0
-      } else {
+      } else if (answerCounts['ambient'] >= 2 || answerCounts['silent'] >= 2) {
         resultIndex = 1
+      } else {
+        resultIndex = 0
       }
     } else if (diagnosis.id === 'learning-type') {
       if (answerCounts['research'] >= 2 || answerCounts['deep'] >= 2) {
@@ -78,6 +81,9 @@ export default function DiagnosisPage() {
       } else {
         resultIndex = 0
       }
+    } else {
+      const seed = dominantAnswer ? dominantAnswer.charCodeAt(0) : 0
+      resultIndex = seed % diagnosis.results.length
     }
 
     setResult(diagnosis.results[resultIndex])
