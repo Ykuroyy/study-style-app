@@ -13,30 +13,30 @@ export default function ResultCard({ result, onRestart }: ResultCardProps) {
     <motion.div
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
-      className="cute-card rounded-2xl shadow-cute p-6 sm:p-8 max-w-lg w-full mx-auto"
+      className="cute-card rounded-xl sm:rounded-2xl shadow-cute p-4 sm:p-6 lg:p-8 max-w-sm sm:max-w-lg w-full mx-auto"
     >
-      <div className={`${result.color} rounded-2xl p-6 mb-6 text-center`}>
-        <div className="text-4xl mb-3">🎉</div>
-        <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-2">
+      <div className={`${result.color} rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 text-center`}>
+        <div className="text-3xl sm:text-4xl mb-2 sm:mb-3">🎉</div>
+        <h2 className="text-base sm:text-lg lg:text-xl font-bold text-gray-800 mb-2">
           あなたのタイプは...
         </h2>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
+        <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-gray-900">
           {result.title}
         </h1>
       </div>
       
-      <div className="mb-6">
+      <div className="mb-4 sm:mb-6">
         <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{result.description}</p>
       </div>
       
-      <div className="mb-8">
-        <h3 className="text-base sm:text-lg font-bold text-gray-800 mb-3">
+      <div className="mb-6 sm:mb-8">
+        <h3 className="text-sm sm:text-base lg:text-lg font-bold text-gray-800 mb-2 sm:mb-3">
           💡 アドバイス
         </h3>
-        <ul className="space-y-2">
+        <ul className="space-y-1.5 sm:space-y-2">
           {result.advice.map((advice, index) => (
             <li key={index} className="flex items-start">
-              <span className="text-cute-primary mr-2">•</span>
+              <span className="text-cute-primary mr-2 text-sm sm:text-base">•</span>
               <span className="text-gray-700 text-sm sm:text-base">{advice}</span>
             </li>
           ))}
@@ -45,7 +45,7 @@ export default function ResultCard({ result, onRestart }: ResultCardProps) {
       
       <button
         onClick={onRestart}
-        className="w-full py-3 sm:py-4 rounded-2xl cute-button
+        className="w-full py-3 sm:py-4 rounded-xl sm:rounded-2xl cute-button
                  text-white font-bold text-sm sm:text-base
                  transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
       >

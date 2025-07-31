@@ -18,13 +18,13 @@ export default function DiagnosisPage() {
 
   if (!diagnosis) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4">
-        <div className="cute-card rounded-2xl shadow-cute p-8 text-center">
-          <div className="text-4xl mb-4">😅</div>
-          <p className="text-gray-700 font-medium">診断が見つかりません</p>
+      <div className="min-h-screen flex items-center justify-center px-4 py-6 sm:p-4">
+        <div className="cute-card rounded-xl sm:rounded-2xl shadow-cute p-6 sm:p-8 text-center max-w-sm mx-auto">
+          <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">😅</div>
+          <p className="text-gray-700 font-medium text-sm sm:text-base">診断が見つかりません</p>
           <button 
             onClick={() => router.push('/')}
-            className="mt-4 px-6 py-2 cute-button text-white rounded-full text-sm font-medium"
+            className="mt-3 sm:mt-4 px-4 sm:px-6 py-2 cute-button text-white rounded-full text-sm font-medium"
           >
             ホームに戻る
           </button>
@@ -88,7 +88,7 @@ export default function DiagnosisPage() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center px-4 py-6 sm:p-4">
       {result ? (
         <ResultCard result={result} onRestart={handleRestart} />
       ) : (
