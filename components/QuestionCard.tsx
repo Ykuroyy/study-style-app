@@ -59,7 +59,10 @@ export default function QuestionCard({
                      border-4 border-transparent hover:border-cute-primary transform hover:scale-[1.02] active:scale-[0.98]
                      shadow-lg hover:shadow-2xl min-h-[120px] sm:min-h-[100px]`}
           >
-            <span className="text-gray-700 font-black text-4xl sm:text-3xl flex items-center justify-center gap-2 tracking-wider">
+            <span 
+              className="text-gray-700 font-black flex items-center justify-center gap-2 tracking-wider"
+              style={{ fontSize: '2.5rem' }}
+            >
               {option.text}
             </span>
           </button>
