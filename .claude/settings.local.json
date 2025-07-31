@@ -14,7 +14,9 @@
       "Bash(git rm:*)",
       "Bash(git remote add:*)",
       "Bash(find:*)",
-      "Bash(git check-ignore:*)"
+      "Bash(git check-ignore:*)",
+      "Bash(cat:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }
