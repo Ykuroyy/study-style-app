@@ -37,14 +37,9 @@ export default function DiagnosisCard({ diagnosis, index, onSelect }: DiagnosisC
             {diagnosis.title}
           </h3>
         </div>
-        <p className="text-gray-700 text-sm sm:text-sm leading-relaxed mb-3 sm:mb-0">
+        <p className="text-gray-700 text-sm sm:text-sm leading-relaxed">
           {diagnosis.description}
         </p>
-        <div className="mt-3 sm:mt-4 flex justify-end">
-          <div className="bg-white/70 rounded-full px-2 sm:px-3 py-1 text-xs font-medium text-gray-600">
-            タップして開始 →
-          </div>
-        </div>
       </div>
     </motion.div>
   )
